@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Timer</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: black;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #inputCont {
+            margin-top: 20%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        label {
+            color: rgb(203, 199, 199);
+            margin-top: 5px;
+        }
+        input{
+            padding: 5px;
+            border: none;
+            color: white;
+            background-color: black;
+            width: 2%;
+        }
+        #buttonCont {
+            margin-top: 1.5%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        button{
+            width: 5%;
+            border: 1px solid black;
+            background-color: white;
+            color: black;
+            border-radius: 25px;
+            padding: 0.2%;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="inputCont">
+        <input type="number" id="hours" min="0" placeholder="0">
+        <label >H</label> 
+        <input type="number" id="minutes" min="0" max="59" placeholder="0">
+        <label >M</label>
+        <input type="number" id="seconds" min="0" max="59" placeholder="0">
+        <label >S</label>
+    </div>
+    <div id="buttonCont">
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+   </div>
+</body>
+</html>
+<script>
+    let totalTime;
+    let mainFunction;
+    let startButton = false;
+    let catchHrs;
+    let catchMins;
+    let catchSecs;
+    function startTimer(){ 
+        if(startButton === false) {
+            startButton = true;
+
+            catchHrs = document.getElementById(`hours`).value;
+            catchMins = document.getElementById(`minutes`).value;
+            catchSecs = document.getElementById(`seconds`).value;
+            
+            let hours = Number(document.getElementById('hours').value);
+            let minutes = Number(document.getElementById('minutes').value);
+            let seconds = Number(document.getElementById('seconds').value);
+
+            totalTime = hours * 3600 + minutes * 60 + seconds;
+            
+            mainFunction = setInterval(function(){
+                totalTime--;
+            
+                let h = Math.floor(totalTime / 3600);
+                let m = Math.floor((totalTime % 3600) / 60);
+                let s = totalTime % 60;
+            
+                document.getElementById('hours').value = h;
+                document.getElementById('minutes').value = m;
+                document.getElementById('seconds').value = s;
+            
+                if(totalTime <= 0){
+                    clearInterval(mainFunction);
+                    mainFunction = null;
+            
+                };
+            },1000);
+        };
+    };
+    function pauseTimer(){
+        startButton = false;
+        clearInterval(mainFunction);
+        mainFunction = null;
+    };
+
+    function resetTimer(){
+        startButton = false;
+        pauseTimer();
+        document.getElementById('hours').value = catchHrs;
+        document.getElementById('minutes').value = catchMins;
+        document.getElementById('seconds').value = catchSecs;
+    };
+</script>

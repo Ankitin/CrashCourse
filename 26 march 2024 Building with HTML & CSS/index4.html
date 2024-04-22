@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masai News</title>
+    <style>
+        * {
+            font-family: Poppins, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", Segoe UI Symbol, "Noto Color Emoji";
+        }
+        .masai-news {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        #parent-div {
+            width: 80%;
+            height: auto;
+            border: 0px solid;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            margin: auto;
+        }
+        .child-div {
+            width: auto;
+            border: 0px solid;
+            height: 430px;
+            box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1), 0px 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .img {
+            border: 0px solid;
+            width: 325px;
+            height: 192px;
+            border-radius: 10px;
+        }
+        .date {
+            color: blue;
+        }
+        span {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="masai-news">Masai In <span>News</span></h1>
+    <p class="masai-news">We are often covered in the news, for all the right reasons. Learn all about our success stories, placement updates, <br>investment and acquisition announcements, future roadmap and more in our press coverage.</p>
+    <div id="parent-div">
+        <div class="child-div">
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Article_Prateek_Shukla_Gen_AI_92324e2d6b.jpeg" alt="" class="img">
+            <p class="date">28 Aug 2023</p>
+            <h3 class="heading">Empowering Education Through <br> GenAI</h3>
+            <p class="para">In the dynamic landscape of today’s job <br> market, Gen AI plays a significant ...</p>
+        </div>
+        <div class="child-div">
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Thungy_1_420b226e5b.webp" alt="" class="img">
+            <p class="date">05 May 2023</p>
+            <h3 class="heading">Masai School targets fivefold <br> revenue growth in three years</h3>
+            <p class="para">Masai School's growth plans indicate that<br> the demand for skilled workers in...</p>
+        </div>
+        <div class="child-div">
+            <img src="https://masai-website-images.s3.ap-south-1.amazonaws.com/PR_Thingy_2_f2c52e6fcf.webp" alt="" class="img">
+            <p class="date">25 May 2023</p>
+            <h3 class="heading">Beyond Degrees: Embracing <br> Alternative Credentialing and  <br>Micro-learning in Tech <br>Recruitment</h3>
+            <p class="para">The enduring presence of alternative <br>credentialing and microlearning indica...</p>
+        </div>
+    </div>
+</body>
+</html>
